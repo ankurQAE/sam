@@ -2,6 +2,9 @@ package com.seleniumJava.letznav;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,7 +25,8 @@ public class NewTest {
 		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com/");
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
 		
 	}
 
